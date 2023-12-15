@@ -39,7 +39,7 @@ class WorseLocalVariableCompletor implements TolerantCompletor
             }
 
             yield Suggestion::createWithOptions(
-                '$' . $local->name(),
+                $local->name(),
                 [
                     'type' => Suggestion::TYPE_VARIABLE,
                     'short_description' => $this->informationFormatter->format($local),

@@ -188,9 +188,9 @@ class WorseReflectionExtension implements Extension
 
     private function registerDiagnosticProviders(ContainerBuilder $container): void
     {
-        $container->register(MissingMemberProvider::class, function (Container $container) {
-            return new MissingMemberProvider();
-        }, [ self::TAG_DIAGNOSTIC_PROVIDER => []]);
+        // $container->register(MissingMemberProvider::class, function (Container $container) {
+        //     return new MissingMemberProvider();
+        // }, [ self::TAG_DIAGNOSTIC_PROVIDER => []]);
         $container->register(DocblockMissingReturnTypeProvider::class, function (Container $container) {
             return new DocblockMissingReturnTypeProvider();
         }, [ self::TAG_DIAGNOSTIC_PROVIDER => []]);
@@ -200,9 +200,9 @@ class WorseReflectionExtension implements Extension
         $container->register(AssignmentToMissingPropertyProvider::class, function (Container $container) {
             return new AssignmentToMissingPropertyProvider();
         }, [ self::TAG_DIAGNOSTIC_PROVIDER => []]);
-        $container->register(MissingReturnTypeProvider::class, function (Container $container) {
-            return new MissingReturnTypeProvider();
-        }, [ self::TAG_DIAGNOSTIC_PROVIDER => []]);
+        // $container->register(MissingReturnTypeProvider::class, function (Container $container) {
+        //     return new MissingReturnTypeProvider();
+        // }, [ self::TAG_DIAGNOSTIC_PROVIDER => []]);
         $container->register(UnresolvableNameProvider::class, function (Container $container) {
             return new UnresolvableNameProvider($container->parameter(self::PARAM_IMPORT_GLOBALS)->bool());
         }, [ self::TAG_DIAGNOSTIC_PROVIDER => []]);
