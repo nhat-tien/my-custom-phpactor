@@ -19,28 +19,28 @@ use Phpactor\WorseReflection\Core\Util\NodeUtil;
 class DocblockCompletor implements TolerantCompletor
 {
     const SUPPORTED_TAGS = [
-        '@property',
-        '@var',
-        '@param',
-        '@return',
-        '@method',
-        '@deprecated',
-        '@extends',
-        '@implements',
-        '@template',
-        '@template-extends',
+        'property',
+        'var',
+        'param',
+        'return',
+        'method',
+        'deprecated',
+        'extends',
+        'implements',
+        'template',
+        'template-extends',
     ];
     const TAGS_WITH_VAR = [
-        '@param',
+        'param',
     ];
     const TAGS_WITH_TYPE_ARG = [
-        '@param',
-        '@var',
-        '@return',
-        '@method',
-        '@property',
-        '@implements',
-        '@extends',
+        'param',
+        'var',
+        'return',
+        'method',
+        'property',
+        'implements',
+        'extends',
     ];
 
     public function __construct(
@@ -66,7 +66,7 @@ class DocblockCompletor implements TolerantCompletor
             return false;
         }
 
-        $tag = '@' . $tag;
+        // <-- Change here; before: $tag = '@' . $tag;
 
         if ($var) {
             yield from $this->varCompletion($node, $byteOffset, $tag, $var);
@@ -137,7 +137,7 @@ class DocblockCompletor implements TolerantCompletor
                 continue;
             }
             yield Suggestion::createWithOptions(
-                '$' . $parameter->getName(),
+                $parameter->getName(), // <--- Change here; before: '$' . $parameter->getName(),
                 [
                     'type' => Suggestion::TYPE_VARIABLE,
                 ]
