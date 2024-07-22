@@ -3,18 +3,47 @@ Changelog
 
 ## master
 
-Features:
+Bug fixes:
 
-  - PHAR Indexing #2412 @dantleech
+  - Take optional parameters into account with conditional types #2700 @dantleech
+  - Fix import position when `declare` is present #2698 @dantleech
+  - Fix NULL error in Docblock parser #2693 @dantleech
 
 Improvements:
 
+  - Improve formatting for override method #2702 @dantleech
+  - Offer completions on attributes not associated with class member body
+    #2695 @przepompownia
+  - Show prose associated with `@throws` tag #2694 @mamazu
+  - Support parsing generic variance e.g. `covariant` #2664 @dantleech
+
+## 2024-06-30
+
+Features:
+
+  - PHAR Indexing #2412 #2611 @dantleech
+  - Override method refactor #2686 @dantleech
+
+Improvements:
+
+  - Do not use indexer when renaming private properties/methods #2672 @dantleech
   - Fix contextual completion in constructor agrument position #2504
   - Basic support for `array_reduce` stub #2576
+  - Support variadics in contextual completion #2603
+  - Allow use of `%project_root%` in index paths #2665 @mamazon
+  - Fix another `PHP_BINARY` avoid writing to `dev/null` and other windows fixes @MatmaRex
+  - Use `get_debug_type` @zonuexe
+  - Show strikethrough for deprecated diagnostics #2623 @mamazu
+  - Adding more type coverage #2606 #2614 @mamazu
 
 Bug fixes:
 
+  - Fix renaming attributed class members @przepompownia
+  - Do not error when PHPStan returns no output @mamazu
+  - Only filter new object expression names in contextual completion #2603
   - Fixing include and exclude patterns #2593 @mamazu
+  - Fix missing @implements code action #2668 @dantleech
+  - Initialized properties don't appear in LSP document symbols #2678 @mamazu
 
 ## 2024-03-09
 
